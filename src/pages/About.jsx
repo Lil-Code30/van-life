@@ -4,7 +4,7 @@ import bgImg from "../assets/images/about-hero.png";
 
 export default function About() {
   return (
-    <div className=" w-full border h-[90dvh] font-inter">
+    <div className=" w-full font-inter mb-10">
       <div>
         <img
           src={bgImg}
@@ -25,7 +25,7 @@ export default function About() {
           of touring the world on 4 wheels.
         </p>
       </div>
-      <div className="mb-2 mt-10 px-5 bg-[#FFCC8D] text-[#161616] mx-5 py-5 rounded-lg flex flex-col">
+      <div className="mb-2 mt-10 px-5 bg-[#FFCC8D] text-[#161616] max-w-[500px] mx-5 py-5 rounded-lg flex flex-col">
         <h2 className=" text-2xl md:text-3xl font-bold mb-8">
           Your destination is waiting.
           <br />
