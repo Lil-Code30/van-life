@@ -10,6 +10,9 @@ export default function Header() {
         #VanLife
       </Link>
       <nav className="flex gap-x-4">
+        <Link className="nav-link" to="/host">
+          Host
+        </Link>
         <Link className="nav-link" to="/about">
           About
         </Link>
