@@ -15,6 +15,7 @@
   body {
     margin: 0;
     padding: 0;
+    height: 100%;
     background-color: #fff7ed;
     font-family: "Inter", sans-serif;
   }
@@ -26,7 +27,9 @@
   body {
     -ms-overflow-style: none;
     scrollbar-width: none;
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
 }
 
@@ -47,7 +50,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    @apply h-[90dvh];
+    @apply h-screen;
   }
   .home-container h1 {
     font-weight: 700;

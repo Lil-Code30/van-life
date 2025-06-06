@@ -7,7 +7,9 @@ export default function Layout() {
   return (
     <>
       <Header />
-      <Outlet />
+      <main className="flex-1 min-h-screen">
+        <Outlet />
+      </main>
       <Footer />
     </>
   );
