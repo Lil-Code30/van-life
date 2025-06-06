@@ -35,7 +35,7 @@
 
 @layer components {
   .nav-link {
-    @apply text-[#4D4D4D] text-lg font-inter font-semibold cursor-pointer hover:underline hover:text-[#161616];
+    @apply text-[#4D4D4D] text-lg font-inter font-semibold cursor-pointer hover:border-b hover:text-[#161616] transition duration-300 ease-in;
   }
   .home-container {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)),
@@ -205,7 +205,7 @@
     @apply text-4xl font-inter font-bold md:text-5xl mt-3;
   }
 
-  .van-detail > i {
+  .van-detail > span {
     align-self: flex-start;
   }
 
@@ -224,6 +224,12 @@
     color: white;
     font-size: 1.125rem;
     @apply mt-3 md:max-w-[200px] rounded py-2 px-5 font-bold font-inter;
+  }
+
+  .nav-link-active {
+    @apply border-b;
+    color: #161616;
+    font-weight: bold;
   }
 }
 

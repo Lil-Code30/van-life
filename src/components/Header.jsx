@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -10,15 +10,30 @@ export default function Header() {
         #VanLife
       </Link>
       <nav className="flex gap-x-4">
-        <Link className="nav-link" to="/host">
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "nav-link nav-link-active" : "nav-link"
+          }
+          to="/host"
+        >
           Host
-        </Link>
-        <Link className="nav-link" to="/about">
+        </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "nav-link nav-link-active" : "nav-link"
+          }
+          to="/about"
+        >
           About
-        </Link>
-        <Link className="nav-link" to="/vans">
+        </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "nav-link nav-link-active" : "nav-link"
+          }
+          to="/vans"
+        >
           Vans
-        </Link>
+        </NavLink>
       </nav>
     </header>
   );

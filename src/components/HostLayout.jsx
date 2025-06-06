@@ -1,21 +1,42 @@
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 export default function HostLayout() {
   return (
     <>
-      <nav className="flex gap-x-4">
-        <Link className="nav-link" to="/host">
+      <nav className="flex gap-x-4 4 py-4">
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "nav-link nav-link-active" : "nav-link"
+          }
+          to="/host"
+          end
+        >
           Dashboard
-        </Link>
-        <Link className="nav-link" to="/host/income">
+        </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "nav-link nav-link-active" : "nav-link"
+          }
+          to="/host/income"
+        >
           Income
-        </Link>
-        <Link className="nav-link" to="/vans">
+        </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "nav-link nav-link-active" : "nav-link"
+          }
+          to="/vans"
+        >
           Vans
-        </Link>
-        <Link className="nav-link" to="/host/reviews">
+        </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "nav-link nav-link-active" : "nav-link"
+          }
+          to="/host/reviews"
+        >
           Reviews
-        </Link>
+        </NavLink>
       </nav>
       <Outlet />
     </>
