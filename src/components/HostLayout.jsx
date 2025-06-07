@@ -8,7 +8,7 @@ export default function HostLayout() {
           className={({ isActive }) =>
             isActive ? "nav-link nav-link-active" : "nav-link"
           }
-          to="/host"
+          to="."
           end
         >
           Dashboard
@@ -17,7 +17,7 @@ export default function HostLayout() {
           className={({ isActive }) =>
             isActive ? "nav-link nav-link-active" : "nav-link"
           }
-          to="/host/income"
+          to="income"
         >
           Income
         </NavLink>
@@ -25,7 +25,7 @@ export default function HostLayout() {
           className={({ isActive }) =>
             isActive ? "nav-link nav-link-active" : "nav-link"
           }
-          to="/host/vans"
+          to="vans"
         >
           Vans
         </NavLink>
@@ -33,7 +33,7 @@ export default function HostLayout() {
           className={({ isActive }) =>
             isActive ? "nav-link nav-link-active" : "nav-link"
           }
-          to="/host/reviews"
+          to="reviews"
         >
           Reviews
         </NavLink>
