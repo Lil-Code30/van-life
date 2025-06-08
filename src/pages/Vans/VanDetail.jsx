@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 export default function VanDetail() {
@@ -13,6 +13,11 @@ export default function VanDetail() {
 
   return (
     <div className="van-detail-container mb-10">
+      <div className="mb-5">
+        <Link to=".." relative="path" className="back-button">
+          &larr; <span>Back to all vans</span>
+        </Link>
+      </div>
       {vanDetail ? (
         <div className="van-detail flex flex-col lg:flex-row gap-5 md:w-[80%] md:mx-auto">
           <div className="container w-full lg:w-[90%]">
