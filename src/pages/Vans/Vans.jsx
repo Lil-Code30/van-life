@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 export default function Vans() {
   const [vansInfos, setVansInfos] = useState([]);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const typeFilter = searchParams.get("type");
 
   useEffect(() => {
     try {
@@ -14,7 +16,11 @@ export default function Vans() {
     }
   }, []);
 
-  const vanElements = vansInfos.map((van) => (
+  const displayedVans = typeFilter
+    ? vansInfos.filter((van) => van.type === typeFilter)
+    : vansInfos;
+
+  const vanElements = displayedVans.map((van) => (
     <Link key={van.id} to={`/vans/${van.id}`}>
       <div className="van-tile pb-1.5">
         <img src={van.imageUrl} />
@@ -32,12 +38,26 @@ export default function Vans() {
     </Link>
   ));
 
-  console.log(vansInfos);
+  if (vansInfos.length === 0) return <h1>Loading...</h1>;
   return (
     <div className="van-list-container">
       <h1 className="text-3xl md:text-4xl font-bold font-inter">
         Explore our van options
       </h1>
+      <div className="van-list-filter-buttons flex gap-3">
+        <Link to="?type=simple" className="van-type simple">
+          Simple
+        </Link>
+        <Link to="?type=luxury" className="van-type luxury">
+          Luxury
+        </Link>
+        <Link to="?type=rugged" className="van-type rugged">
+          Rugged
+        </Link>
+        <Link to="." className="van-type clear-filters">
+          Clear filter
+        </Link>
+      </div>
       <div className="van-list">{vanElements}</div>
     </div>
   );
