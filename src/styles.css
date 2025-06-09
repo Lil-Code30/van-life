@@ -392,6 +392,22 @@
     height: 100px;
     border-radius: 5px;
   }
+
+  .not-found-container {
+    @apply flex flex-col mt-20 gap-y-2.5;
+  }
+  .not-found-container h1 {
+    @apply text-6xl font-inter font-bold text-center;
+  }
+  .not-found-container h3 {
+    @apply text-2xl font-inter mt-2 text-center text-gray-500;
+  }
+  .not-found-container .link-button {
+    width: 50%;
+    background-color: #161616;
+    color: white;
+    @apply px-3 py-2 mt-2 rounded mx-auto text-center font-inter font-bold text-xl;
+  }
 }
 
 @layer utilities {
