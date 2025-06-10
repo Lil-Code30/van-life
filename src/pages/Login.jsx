@@ -11,13 +11,15 @@ export default function Login() {
   const [status, setStatus] = React.useState("idle");
   const [error, setError] = React.useState(null);
   const location = useLocation();
+  const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
     setStatus("submitting");
     loginUser(loginFormData)
       .then((data) => {
-        console.log(data);
+        setError(null);
+        navigate("/host");
       })
       .catch((err) => {
         setError(err);
